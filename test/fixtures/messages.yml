@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  sender_id: 1
+  recipient_id: 1
+  read_status: false
+  read_at: 2017-06-24 17:59:11
+
+two:
+  title: MyString
+  body: MyText
+  sender_id: 1
+  recipient_id: 1
+  read_status: false
+  read_at: 2017-06-24 17:59:11

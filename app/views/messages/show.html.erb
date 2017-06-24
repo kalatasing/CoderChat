@@ -1,0 +1,64 @@
+<form id="contact-form" method="post" action="contact.php" role="form">
+
+  <div class="messages"></div>
+
+  <div class="controls">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="form_name">Message Title *</label>
+          <input id="form_name" type="text" name="name" class="form-control" placeholder="<%= @message.title %>" required="required" data-error="Firstname is required." readonly>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+      </div>
+    </div> <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="form_name">Firstname *</label>
+        <input id="form_name" type="text" name="name" class="form-control" placeholder="<%= @message.sender.first_name %>" required="required"readonly>
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="form_lastname">Lastname *</label>
+        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="<%= @message.sender.last_name %>" required="required" readonly>
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form_email">Sender Email *</label>
+          <input id="form_email" type="email" name="email" class="form-control" placeholder="<%= @message.sender.email %>" required="required" readonly>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form_email">Recipient Email *</label>
+          <input id="form_email" type="email" name="email" class="form-control" placeholder="<%= @message.recipient.email %>" required="required" readonly>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="form_message">Message *</label>
+          <textarea id="form_message" name="message" class="form-control" placeholder="<%= @message.body %>" rows="4" required="required" readonly></textarea>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <%= link_to 'BACK TO MY INBOX', messages_path(type: 'INBOX'), class: 'btn btn-success btn-send' %>
+      </div>
+    </div>
+  </div>
+
+</form>

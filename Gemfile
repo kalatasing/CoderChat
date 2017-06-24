@@ -40,6 +40,12 @@ gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 # jquery
 gem 'jquery-rails'
 
+# Bcrypt
+gem 'bcrypt', '~> 3.1.7'
+
+# faker
+gem 'faker', '~> 1.6', '>= 1.6.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

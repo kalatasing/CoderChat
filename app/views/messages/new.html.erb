@@ -1,0 +1,41 @@
+  <%= form_for @message, html: {class: "form-group"} do |f| %>
+  <div class="messages"></div>
+
+  <div class="controls">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="form_name">Message Title *</label>
+          <%= f.text_field :title, class: "form-control"%>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="form_email">Email *</label><br>
+          <%= f.collection_select :recipient_id, User.order(:id), :id, :email, include_blank: false %>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="form_message">Message *</label>
+          <%= f.text_area :body, notes: "Enter your message here ** " , cols: 1, rows: 10, class: "form-control" %>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "Send Message", class: "btn btn-success btn-send" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-muted"><strong>*</strong> These fields are required.</a>.</p>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</form>

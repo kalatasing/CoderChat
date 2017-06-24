@@ -1,2 +1,16 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>WELCOME TO CODER CHAT</h1>
+    <% if current_user %>
+        <%= link_to 'MY INBOX', messages_path(type: 'INBOX'), class: 'btn btn-primary' %>
+        <%= link_to 'MY NETWORK', new_users_path, class: 'btn btn-primary' %>
+    <% else %>
+        <%= link_to 'Why not SIGN UP now......??', new_users_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
