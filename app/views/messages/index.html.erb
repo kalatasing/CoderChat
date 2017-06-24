@@ -1,4 +1,5 @@
-<h1> <%="YOUR #{params[:type]} MESSAGE "%> </h1>
+<h1 class="alert alert-danger" align="center"> <%="YOUR #{params[:type]} MESSAGE "%> </h1>
+
 <%= link_to 'NEW', new_message_path, class: 'btn btn-primary' %>
 <%= link_to 'INBOX', messages_path(type: 'INBOX'), class: 'btn btn-primary' %>
 <%= link_to 'UNREAD', messages_path(type: 'UNREAD'), class: 'btn btn-primary' %>
@@ -7,7 +8,7 @@
 
 
 <% if !@message.present? %>
-  <div class="'alert alert-danger">You have NOT yet receive any messages</div>
+  <div class="alert alert-danger">You have NOT yet receive any messages</div>
 <% else %>
 
   <table class="table table-condensed table-hover">
@@ -15,6 +16,7 @@
     <tr>
       <th class="span1"><input type="checkbox"></th>
       <th class="span2">From</th>
+      <th class="span2">To</th>
       <th class="span2">Title</th>
       <th class="span2">Message Body</th>
       <th class="span9">Read Status</th>
@@ -28,6 +30,7 @@
         <tr>
           <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
           <td><strong><%= "#{m.sender.first_name} #{m.sender.last_name}" %></strong></td>
+          <td><strong><%= "#{m.recipient.first_name} #{m.recipient.last_name}" %></strong></td>
           <td><span class="label pull-right"><%= m.title %></span></td>
           <td><strong><%= link_to "Message body goes here", m %></strong></td>
           <td><strong><%= m.read_status ? "Read" : "UnRead" %></strong></td>
@@ -37,6 +40,7 @@
         <tr>
           <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
           <td><%= "#{m.sender.first_name} #{m.sender.last_name}" %></td>
+          <td><%= "#{m.recipient.first_name} #{m.recipient.last_name}" %></td>
           <td><span class="label pull-right"><%= m.title %></span></td>
           <td><%= link_to "Message body goes here", m %></td>
           <td><%= m.read_status ? "Read" : "UnRead" %></strong></td>
