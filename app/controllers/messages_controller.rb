@@ -36,9 +36,11 @@ class MessagesController < ApplicationController
 
   def update_read_message
     m = Message.find(params[:id])
+    if current_user.id == m.recipient_id
     m[:read_status] = true
     m[:read_at] = Time.now
     m.save!
+    end
   end
 
   private

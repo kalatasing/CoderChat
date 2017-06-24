@@ -15,7 +15,7 @@
         </li>
       <% else %>
           <li class="nav-item">
-            <a> <%= link_to "Sign Out", sign_out_path, method: 'delete', class: "nav-link" %></a>
+            <a> <%= link_to "Sign Out (#{current_user.first_name} #{current_user.last_name})", sign_out_path, method: 'delete', class: "nav-link" %></a>
         </li>
       <% end %>
 
