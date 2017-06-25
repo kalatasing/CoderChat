@@ -36,7 +36,6 @@ class FriendController < ApplicationController
 
 
   def un_friend
-    byebug
     f = User.find(params[:id])
     a = Friend.find_by(user_id: f.id, friend_id: current_user.id)
     b = Friend.find_by(user_id: current_user.id, friend_id: f.id)
