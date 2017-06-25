@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @friends = current_user.friend_list
   end
 
   def show
@@ -20,7 +21,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    byebug
     @message = Message.new(message_params)
     update_sender_id
     respond_to do |format|
@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
 
   def update_read_message
     m = Message.find(params[:id])
-    if current_user.id == m.recipient_id
+    unless current_user.id != m.recipient_id
     m[:read_status] = true
     m[:read_at] = Time.now
     m.save!

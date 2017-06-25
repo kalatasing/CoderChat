@@ -1,4 +1,4 @@
-<h1 class="alert alert-danger" align="center"> <%="YOUR #{params[:type]} MESSAGE "%> </h1>
+<h3 class="alert alert-danger" align="center"> <%="YOUR #{params[:type]} MESSAGE "%> </h3>
 
 <%= link_to 'NEW', new_message_path, class: 'btn btn-primary' %>
 <%= link_to 'INBOX', messages_path(type: 'INBOX'), class: 'btn btn-primary' %>
@@ -18,7 +18,9 @@
       <th class="span2">From</th>
       <th class="span2">To</th>
       <th class="span2">Title</th>
+      <% if params[:type] != "SENT" %>
       <th class="span2">Message Body</th>
+        <% end %>
       <th class="span9">Read Status</th>
       <th class="span2">Read On</th>
     </tr>
@@ -32,7 +34,11 @@
           <td><strong><%= "#{m.sender.first_name} #{m.sender.last_name}" %></strong></td>
           <td><strong><%= "#{m.recipient.first_name} #{m.recipient.last_name}" %></strong></td>
           <td><span class="label pull-right"><%= m.title %></span></td>
+
+          <% if params[:type] != "SENT" %>
           <td><strong><%= link_to "Message body goes here", m %></strong></td>
+          <% end %>
+
           <td><strong><%= m.read_status ? "Read" : "UnRead" %></strong></td>
           <td><strong><%= m.read_at ? m.read_at.strftime("%A %H:%M [%b %d, %Y]") : "N/A" %></strong></td>
         </tr>
@@ -42,7 +48,11 @@
           <td><%= "#{m.sender.first_name} #{m.sender.last_name}" %></td>
           <td><%= "#{m.recipient.first_name} #{m.recipient.last_name}" %></td>
           <td><span class="label pull-right"><%= m.title %></span></td>
+
+          <% if params[:type] != "SENT" %>
           <td><%= link_to "Message body goes here", m %></td>
+          <% end %>
+
           <td><%= m.read_status ? "Read" : "UnRead" %></strong></td>
           <td><%= m.read_at ? m.read_at.strftime("%b %d, %Y") : "N/A" %></td>
         </tr>

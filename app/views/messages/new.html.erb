@@ -14,7 +14,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <label for="form_email">Email *</label><br>
-          <%= f.collection_select :recipient_id, User.order(:id), :id, :email, include_blank: false %>
+          <%= f.collection_select :recipient_id, @friends.each { |f| f.id}, :id, :email %>
           <div class="help-block with-errors"></div>
         </div>
       </div>

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @user = User.all
+  end
 
   def authenticate_user
     @user = User.find_by(email: params[:email])
@@ -31,5 +34,10 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, flash: {notice: "Log out successful - GOODBYE"}
   end
+
+  def my_friend_request
+
+  end
+
 
 end

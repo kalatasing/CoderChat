@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'friend/index'
+
+  get 'friend/show'
+
+  get 'user/my_friend_request' => 'users#my_friend_request'
+
+  post 'friend/add_friend' => 'friend#add_friend'
+
+  post 'friend/friend_accept' => 'friend#friend_accept'
+
+  post 'friend/friend_deny' => 'friend#friend_deny'
+
+  post 'friend/un_friend' => 'friend#un_friend'
+
   resources :messages
   get 'tests/create'
 

@@ -1,0 +1,5 @@
+<h3 class="alert alert-danger" align="center"> <%="#{params[:type]}"%> </h3>
+
+<%= link_to 'ALL USERS', friend_index_path(type: "ALL USERS"), class: 'btn btn-primary' %>
+<%= link_to 'MY FRIENDS', friend_index_path(type: "MY FRIEND"), class: 'btn btn-primary' %>
+<%= link_to 'MY FRIENDS REQUESTS', friend_index_path(type: "MY FRIEND REQUESTS"), class: 'btn btn-primary' %>
