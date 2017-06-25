@@ -1,12 +1,12 @@
-# Homework 2 - *Name of App*
+# Homework 2 - *Coder Chat*
 
-**Name of your app** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
+**Coder Chat** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
 
-Submitted by: **Your Name Here**
+Submitted by: **Luan Ta**
 
-Time spent: **X** hours
+Time spent: **30** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://protected-sierra-61666.herokuapp.com**
 
 ## User Stories
 
@@ -29,7 +29,7 @@ The following **optional** functionality is complete:
 * [ ] User can have multiple recipients on one message. 
 * [ ] User can log in with Facebook. 
 * [ ] User A can "block" User B. If User A blocks User B, they will not see messages from User B. User B will not know they have been blocked.
-* [x] User can remove friends from their friends list.
+* [ ] User can remove friends from their friends list.
 * [ ] User can unblock friends from their block list.
 * [ ] Implement Infinite Scroll. Hint: you can use the [kaminari gem](https://github.com/amatsuda/kaminari) and [jquery-infinite-pages gem](https://github.com/magoosh/jquery-infinite-pages).
 * [ ] User gets an email when they receive a message, with a link to view the message.
@@ -44,7 +44,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
+![Video Walkthrough](demo/Assignment2_demo.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
